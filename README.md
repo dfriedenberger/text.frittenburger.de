@@ -1,5 +1,5 @@
 # text.frittenburger.de
-WebService for parsing and translate text
+WebService for parse and translate text
 
 ![text.frittenburger.de](https://raw.githubusercontent.com/dfriedenberger/text.frittenburger.de/master/webservice.png)
 
