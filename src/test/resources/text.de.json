@@ -1,0 +1,151 @@
+{
+  "sentences" : [ {
+    "tokens" : [ {
+      "text" : "Das",
+      "namedEntity" : "O",
+      "partOfSpeech" : "PDS",
+      "level" : 0
+    }, {
+      "text" : "ist",
+      "namedEntity" : "O",
+      "partOfSpeech" : "VAFIN",
+      "level" : 0
+    }, {
+      "text" : "meine",
+      "namedEntity" : "O",
+      "partOfSpeech" : "PPOSAT",
+      "level" : 2
+    }, {
+      "text" : "Mutter",
+      "namedEntity" : "O",
+      "partOfSpeech" : "NN",
+      "level" : 7
+    }, {
+      "text" : "Vu",
+      "namedEntity" : "PERSON",
+      "partOfSpeech" : "NE",
+      "level" : -1
+    }, {
+      "text" : ",",
+      "namedEntity" : "O",
+      "partOfSpeech" : "$,",
+      "level" : -1
+    }, {
+      "text" : "ich",
+      "namedEntity" : "O",
+      "partOfSpeech" : "PPER",
+      "level" : 0
+    }, {
+      "text" : "heiße",
+      "namedEntity" : "O",
+      "partOfSpeech" : "VVFIN",
+      "level" : 9
+    }, {
+      "text" : "Sue",
+      "namedEntity" : "PERSON",
+      "partOfSpeech" : "NE",
+      "level" : -1
+    }, {
+      "text" : "und",
+      "namedEntity" : "O",
+      "partOfSpeech" : "KON",
+      "level" : 0
+    }, {
+      "text" : "das",
+      "namedEntity" : "O",
+      "partOfSpeech" : "PDS",
+      "level" : 0
+    }, {
+      "text" : "ist",
+      "namedEntity" : "O",
+      "partOfSpeech" : "VAFIN",
+      "level" : 0
+    }, {
+      "text" : "mein",
+      "namedEntity" : "O",
+      "partOfSpeech" : "PPOSAT",
+      "level" : 2
+    }, {
+      "text" : "Bruder",
+      "namedEntity" : "O",
+      "partOfSpeech" : "NN",
+      "level" : 9
+    }, {
+      "text" : "Thao",
+      "namedEntity" : "PERSON",
+      "partOfSpeech" : "NE",
+      "level" : -1
+    }, {
+      "text" : ".",
+      "namedEntity" : "O",
+      "partOfSpeech" : "$.",
+      "level" : -1
+    } ]
+  }, {
+    "tokens" : [ {
+      "text" : "Wir",
+      "namedEntity" : "O",
+      "partOfSpeech" : "PPER",
+      "level" : 0
+    }, {
+      "text" : "wohnen",
+      "namedEntity" : "O",
+      "partOfSpeech" : "VVFIN",
+      "level" : 9
+    }, {
+      "text" : "nebenan",
+      "namedEntity" : "O",
+      "partOfSpeech" : "ADV",
+      "level" : 9
+    }, {
+      "text" : ".",
+      "namedEntity" : "O",
+      "partOfSpeech" : "$.",
+      "level" : -1
+    } ]
+  }, {
+    "tokens" : [ {
+      "text" : "Und",
+      "namedEntity" : "O",
+      "partOfSpeech" : "KON",
+      "level" : 0
+    }, {
+      "text" : "?",
+      "namedEntity" : "O",
+      "partOfSpeech" : "$.",
+      "level" : -1
+    } ]
+  }, {
+    "tokens" : [ {
+      "text" : "Thao",
+      "namedEntity" : "PERSON",
+      "partOfSpeech" : "NE",
+      "level" : -1
+    }, {
+      "text" : "möchte",
+      "namedEntity" : "O",
+      "partOfSpeech" : "VMFIN",
+      "level" : 8
+    }, {
+      "text" : "Ihnen",
+      "namedEntity" : "O",
+      "partOfSpeech" : "PPER",
+      "level" : 2
+    }, {
+      "text" : "was",
+      "namedEntity" : "O",
+      "partOfSpeech" : "PIS",
+      "level" : 0
+    }, {
+      "text" : "sagen",
+      "namedEntity" : "O",
+      "partOfSpeech" : "VVINF",
+      "level" : 3
+    }, {
+      "text" : ".",
+      "namedEntity" : "O",
+      "partOfSpeech" : "$.",
+      "level" : -1
+    } ]
+  } ]
+}

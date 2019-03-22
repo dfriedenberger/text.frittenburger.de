@@ -1,0 +1,171 @@
+{
+  "sentences" : [ {
+    "tokens" : [ {
+      "text" : "Es",
+      "namedEntity" : "O",
+      "partOfSpeech" : "NOUN",
+      "level" : 0
+    }, {
+      "text" : "mi",
+      "namedEntity" : "O",
+      "partOfSpeech" : "DET",
+      "level" : 1
+    }, {
+      "text" : "madre",
+      "namedEntity" : "O",
+      "partOfSpeech" : "NOUN",
+      "level" : 6
+    }, {
+      "text" : ",",
+      "namedEntity" : "O",
+      "partOfSpeech" : "PUNCT",
+      "level" : -1
+    }, {
+      "text" : "Vu",
+      "namedEntity" : "O",
+      "partOfSpeech" : "X",
+      "level" : 9
+    }, {
+      "text" : ",",
+      "namedEntity" : "O",
+      "partOfSpeech" : "PUNCT",
+      "level" : -1
+    }, {
+      "text" : "yo",
+      "namedEntity" : "O",
+      "partOfSpeech" : "PRON",
+      "level" : 1
+    }, {
+      "text" : "soy",
+      "namedEntity" : "O",
+      "partOfSpeech" : "PROPN",
+      "level" : 2
+    }, {
+      "text" : "Sue",
+      "namedEntity" : "PERSON",
+      "partOfSpeech" : "PROPN",
+      "level" : -1
+    }, {
+      "text" : "y",
+      "namedEntity" : "O",
+      "partOfSpeech" : "CONJ",
+      "level" : 0
+    }, {
+      "text" : "él",
+      "namedEntity" : "O",
+      "partOfSpeech" : "PRON",
+      "level" : 1
+    }, {
+      "text" : ",",
+      "namedEntity" : "O",
+      "partOfSpeech" : "PUNCT",
+      "level" : -1
+    }, {
+      "text" : "mi",
+      "namedEntity" : "O",
+      "partOfSpeech" : "DET",
+      "level" : 1
+    }, {
+      "text" : "hermano",
+      "namedEntity" : "O",
+      "partOfSpeech" : "NOUN",
+      "level" : 8
+    }, {
+      "text" : ",",
+      "namedEntity" : "O",
+      "partOfSpeech" : "PUNCT",
+      "level" : -1
+    }, {
+      "text" : "Thao",
+      "namedEntity" : "PERSON",
+      "partOfSpeech" : "PROPN",
+      "level" : -1
+    }, {
+      "text" : ".",
+      "namedEntity" : "O",
+      "partOfSpeech" : "PUNCT",
+      "level" : -1
+    } ]
+  }, {
+    "tokens" : [ {
+      "text" : "Hemos",
+      "namedEntity" : "O",
+      "partOfSpeech" : "AUX",
+      "level" : 7
+    }, {
+      "text" : "vivido",
+      "namedEntity" : "O",
+      "partOfSpeech" : "VERB",
+      "level" : 9
+    }, {
+      "text" : "a",
+      "namedEntity" : "O",
+      "partOfSpeech" : "ADP",
+      "level" : 0
+    }, {
+      "text" : "el",
+      "namedEntity" : "O",
+      "partOfSpeech" : "DET",
+      "level" : 0
+    }, {
+      "text" : "lado",
+      "namedEntity" : "O",
+      "partOfSpeech" : "NOUN",
+      "level" : 8
+    }, {
+      "text" : ".",
+      "namedEntity" : "O",
+      "partOfSpeech" : "PUNCT",
+      "level" : -1
+    } ]
+  }, {
+    "tokens" : [ {
+      "text" : "¿",
+      "namedEntity" : "O",
+      "partOfSpeech" : "PUNCT",
+      "level" : -1
+    }, {
+      "text" : "Y",
+      "namedEntity" : "O",
+      "partOfSpeech" : "CONJ",
+      "level" : 0
+    }, {
+      "text" : "?",
+      "namedEntity" : "O",
+      "partOfSpeech" : "PUNCT",
+      "level" : -1
+    } ]
+  }, {
+    "tokens" : [ {
+      "text" : "Thao",
+      "namedEntity" : "PERSON",
+      "partOfSpeech" : "PROPN",
+      "level" : -1
+    }, {
+      "text" : "quiere",
+      "namedEntity" : "O",
+      "partOfSpeech" : "VERB",
+      "level" : 5
+    }, {
+      "text" : "decir",
+      "namedEntity" : "O",
+      "partOfSpeech" : "VERB",
+      "level" : 3
+    }, {
+      "text" : "le",
+      "namedEntity" : "O",
+      "partOfSpeech" : "PRON",
+      "level" : 1
+    }, {
+      "text" : "algo",
+      "namedEntity" : "O",
+      "partOfSpeech" : "PRON",
+      "level" : 1
+    }, {
+      "text" : ".",
+      "namedEntity" : "O",
+      "partOfSpeech" : "PUNCT",
+      "level" : -1
+    } ]
+  } ]
+}

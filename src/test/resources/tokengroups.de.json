@@ -1,0 +1,219 @@
+[ {
+  "translate" : true,
+  "tokens" : [ {
+    "text" : "Das",
+    "namedEntity" : "O",
+    "partOfSpeech" : "PDS",
+    "level" : 0
+  } ]
+}, {
+  "translate" : true,
+  "tokens" : [ {
+    "text" : "ist",
+    "namedEntity" : "O",
+    "partOfSpeech" : "VAFIN",
+    "level" : 0
+  } ]
+}, {
+  "translate" : true,
+  "tokens" : [ {
+    "text" : "meine",
+    "namedEntity" : "O",
+    "partOfSpeech" : "PPOSAT",
+    "level" : 2
+  } ]
+}, {
+  "translate" : true,
+  "tokens" : [ {
+    "text" : "Mutter",
+    "namedEntity" : "O",
+    "partOfSpeech" : "NN",
+    "level" : 7
+  } ]
+}, {
+  "translate" : false,
+  "tokens" : [ {
+    "text" : "Vu",
+    "namedEntity" : "PERSON",
+    "partOfSpeech" : "NE",
+    "level" : -1
+  } ]
+}, {
+  "translate" : false,
+  "tokens" : [ {
+    "text" : ",",
+    "namedEntity" : "O",
+    "partOfSpeech" : "$,",
+    "level" : -1
+  } ]
+}, {
+  "translate" : true,
+  "tokens" : [ {
+    "text" : "ich",
+    "namedEntity" : "O",
+    "partOfSpeech" : "PPER",
+    "level" : 0
+  }, {
+    "text" : "heiße",
+    "namedEntity" : "O",
+    "partOfSpeech" : "VVFIN",
+    "level" : 9
+  } ]
+}, {
+  "translate" : false,
+  "tokens" : [ {
+    "text" : "Sue",
+    "namedEntity" : "PERSON",
+    "partOfSpeech" : "NE",
+    "level" : -1
+  } ]
+}, {
+  "translate" : true,
+  "tokens" : [ {
+    "text" : "und",
+    "namedEntity" : "O",
+    "partOfSpeech" : "KON",
+    "level" : 0
+  } ]
+}, {
+  "translate" : true,
+  "tokens" : [ {
+    "text" : "das",
+    "namedEntity" : "O",
+    "partOfSpeech" : "PDS",
+    "level" : 0
+  } ]
+}, {
+  "translate" : true,
+  "tokens" : [ {
+    "text" : "ist",
+    "namedEntity" : "O",
+    "partOfSpeech" : "VAFIN",
+    "level" : 0
+  } ]
+}, {
+  "translate" : true,
+  "tokens" : [ {
+    "text" : "mein",
+    "namedEntity" : "O",
+    "partOfSpeech" : "PPOSAT",
+    "level" : 2
+  } ]
+}, {
+  "translate" : true,
+  "tokens" : [ {
+    "text" : "Bruder",
+    "namedEntity" : "O",
+    "partOfSpeech" : "NN",
+    "level" : 9
+  } ]
+}, {
+  "translate" : false,
+  "tokens" : [ {
+    "text" : "Thao",
+    "namedEntity" : "PERSON",
+    "partOfSpeech" : "NE",
+    "level" : -1
+  } ]
+}, {
+  "translate" : false,
+  "tokens" : [ {
+    "text" : ".",
+    "namedEntity" : "O",
+    "partOfSpeech" : "$.",
+    "level" : -1
+  } ]
+}, {
+  "translate" : true,
+  "tokens" : [ {
+    "text" : "Wir",
+    "namedEntity" : "O",
+    "partOfSpeech" : "PPER",
+    "level" : 0
+  }, {
+    "text" : "wohnen",
+    "namedEntity" : "O",
+    "partOfSpeech" : "VVFIN",
+    "level" : 9
+  } ]
+}, {
+  "translate" : true,
+  "tokens" : [ {
+    "text" : "nebenan",
+    "namedEntity" : "O",
+    "partOfSpeech" : "ADV",
+    "level" : 9
+  } ]
+}, {
+  "translate" : false,
+  "tokens" : [ {
+    "text" : ".",
+    "namedEntity" : "O",
+    "partOfSpeech" : "$.",
+    "level" : -1
+  } ]
+}, {
+  "translate" : true,
+  "tokens" : [ {
+    "text" : "Und",
+    "namedEntity" : "O",
+    "partOfSpeech" : "KON",
+    "level" : 0
+  } ]
+}, {
+  "translate" : false,
+  "tokens" : [ {
+    "text" : "?",
+    "namedEntity" : "O",
+    "partOfSpeech" : "$.",
+    "level" : -1
+  } ]
+}, {
+  "translate" : false,
+  "tokens" : [ {
+    "text" : "Thao",
+    "namedEntity" : "PERSON",
+    "partOfSpeech" : "NE",
+    "level" : -1
+  } ]
+}, {
+  "translate" : true,
+  "tokens" : [ {
+    "text" : "möchte",
+    "namedEntity" : "O",
+    "partOfSpeech" : "VMFIN",
+    "level" : 8
+  } ]
+}, {
+  "translate" : true,
+  "tokens" : [ {
+    "text" : "Ihnen",
+    "namedEntity" : "O",
+    "partOfSpeech" : "PPER",
+    "level" : 2
+  } ]
+}, {
+  "translate" : true,
+  "tokens" : [ {
+    "text" : "was",
+    "namedEntity" : "O",
+    "partOfSpeech" : "PIS",
+    "level" : 0
+  } ]
+}, {
+  "translate" : true,
+  "tokens" : [ {
+    "text" : "sagen",
+    "namedEntity" : "O",
+    "partOfSpeech" : "VVINF",
+    "level" : 3
+  } ]
+}, {
+  "translate" : false,
+  "tokens" : [ {
+    "text" : ".",
+    "namedEntity" : "O",
+    "partOfSpeech" : "$.",
+    "level" : -1
+  } ]
+} ]
