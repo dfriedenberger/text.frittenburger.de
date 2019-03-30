@@ -5,16 +5,9 @@ WebService for parse and translate text
 
 # Quick Start
 
-- Download classifiers to clasifiers folder
-https://stanfordnlp.github.io/CoreNLP/download.html
-
-English 
-German
-Spanish
-
-- Download Dictionary
-- mvn run
- 
+'''cp config/aws.json.vorlage config/aws.json'''
+'''vi config/aws.json'''
+'''mvn exec:java -Dexec.mainClass="de.frittenburger.text.app.WebService"'''
 
 # Contact
 Dirk Friedenberger, Waldaschaff, Germany
