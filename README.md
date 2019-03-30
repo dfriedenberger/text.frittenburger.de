@@ -5,7 +5,13 @@ WebService for parse and translate text
 
 # Quick Start
 
-- Download classifiers
+- Download classifiers to clasifiers folder
+https://stanfordnlp.github.io/CoreNLP/download.html
+
+English 
+German
+Spanish
+
 - Download Dictionary
 - mvn run
  

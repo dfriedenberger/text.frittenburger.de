@@ -1,6 +1,7 @@
 package de.frittenburger.text.impl;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,17 +15,22 @@ import java.util.Map;
 
 
 
+
 import de.frittenburger.text.interfaces.Reader;
 
 public class DictReader implements Reader<Map<String, String[]>> {
 
 	private final String filename;
 
-	public DictReader(String filename)  {
+	public DictReader(String filename) throws IOException  {
 		
 		this.filename = filename;
-	
-	
+		File file = new File(filename);
+		
+		if(!file.exists() && file.getParentFile().isDirectory())
+		{
+          file.createNewFile();
+		}
 	}
 
 	@Override
