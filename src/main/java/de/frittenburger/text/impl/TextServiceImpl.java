@@ -7,7 +7,6 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import de.frittenburger.text.interfaces.AnnotationWrapper;
 import de.frittenburger.text.interfaces.TextService;
 import de.frittenburger.text.interfaces.WordFrequencyService;
 import de.frittenburger.text.model.Sentence;
@@ -33,12 +32,11 @@ public class TextServiceImpl implements TextService {
 
 	private final StanfordCoreNLP pipeline;
 	private final WordFrequencyService frequencyService;
-	private final AnnotationWrapper wrapper;
 	public TextServiceImpl(String language) throws IOException {
 		
 		this.frequencyService = Factory.getWordFrequencyServiceInstance(language);
 		this.pipeline = Factory.getPipelineInstance(language);
-		this.wrapper = Factory.getAnnotationWrapperInstance(language);
+		
 	}
 
 	@Override
@@ -76,7 +74,8 @@ public class TextServiceImpl implements TextService {
 				
 				// this is the POS tag of the token
 				String pos = tok.get(PartOfSpeechAnnotation.class);
-				token.setPartOfSpeech(pos);
+				String partofSpeech = pos2class(pos);
+				token.setPartOfSpeech(partofSpeech);
 				
 			
 				// this is the NER label of the token
@@ -84,14 +83,12 @@ public class TextServiceImpl implements TextService {
 				token.setNamedEntity(ne);
 
 				token.setLevel(-1);
-				if(wrapper.isVocabulary(pos,ne))
+				if(isVocabulary(pos,ne))
 				{
 					int level = frequencyService.level(word);
 					token.setLevel(level);
 				}
 			   
-				//System.out.println(word + " " + pos + " " + ne);
-
 			}
 			
 		}
@@ -99,6 +96,81 @@ public class TextServiceImpl implements TextService {
 		return text;
 	}
 
-	
+	private boolean isVocabulary(String pos, String ne) {
+
+		if(!ne.equals("O")) return false;
+		
+		if(pos.equals("punctuation")) return false;
+		
+		return true;
+	}
+
+	private String pos2class(String pos) {
+
+		switch (pos) {
+		// spanich and german
+		case "ADJ":
+		case "JJ":
+		case "JJR": //comparative	'bigger'
+		case "JJS": //superlative	'biggest'
+			return "adjective";
+		case "ADP":
+			return "adposition";
+		case "ADV":
+		case "RB": //adverb	very, silently
+		case "RBR": //adverb, comparative better
+		case "RBS": //adverb, superlative best
+		case "WRB": //wh-abverb	where, when
+			return "adverb";
+		case "AUX":
+			return "auxiliary-verb";
+		case "CCONJ":
+		case "CC":
+			return "coordinating-conjunction";
+		case "DET":
+		case "DT":
+		case "WDT": //wh-determiner	which
+			return "determiner";
+		case "INTJ":
+			return "interjection";
+		case "NOUN":
+		case "NN": //noun, singular 'desk'
+		case "NNS": //noun plural	'desks'
+			return "noun";
+		case "NUM":
+			return "numeral";
+		case "PART":
+			return "particle";
+		case "PRON":
+		case "PRP": //personal pronoun	I, he, she
+		case "PRP$": //possessive pronoun	my, his, hers
+		case "WP":	//wh-pronoun	who, what
+		case "WP$": //	possessive wh-pronoun	whose
+			return "pronoun";
+		case "PROPN":
+		case "NNP": //proper noun, singular	'Harrison'
+		case "NNPS": //proper noun, plural	'Americans'
+			return "proper-noun";
+		case "PUNCT":
+		case ".":
+			return "punctuation";
+		case "SCONJ":
+			return "subordinating-conjunction";
+		case "SYM":
+			return "symbol";
+		case "IN":
+			return "preposition/subordinating-conjunction";
+		case "VERB":
+		case "VB":	//verb, base form	take
+		case "VBD":	//verb, past tense	took
+		case "VBG":	//verb, gerund/present participle	taking
+		case "VBN":	//verb, past participle	taken
+		case "VBP": //verb, sing. present, non-3d	take
+		case "VBZ":	//verb, 3rd person sing. present	takes
+			return "verb";
+		default:
+			return "#"+pos;
+		}
+	}
 
 }

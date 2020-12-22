@@ -1,12 +1,10 @@
 # text.frittenburger.de
-WebService for parse and translate text
+WebService for analysing text
 
 ![text.frittenburger.de](https://raw.githubusercontent.com/dfriedenberger/text.frittenburger.de/master/webservice.png)
 
 # Quick Start
 <pre><code>
-cp config/aws.json.vorlage config/aws.json
-vi config/aws.json
 mvn exec:java -Dexec.mainClass="de.frittenburger.text.app.WebService"
 </code></pre>
 # Contact

@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import de.frittenburger.text.interfaces.AnnotationWrapper;
 import de.frittenburger.text.interfaces.WordFrequencyService;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 
@@ -31,7 +30,10 @@ public class Factory {
 		Properties properties = new Properties();
 		ClassLoader cl = Factory.class.getClassLoader();
 		
-		String path = language+"/StanfordCoreNLP.properties";
+		String path = "StanfordCoreNLP-"+language+".properties";
+
+		if(language.equals("english")) // is default
+			path = "StanfordCoreNLP.properties";
 		
 		try(InputStream is = cl.getResourceAsStream(path))
 		{
@@ -39,26 +41,13 @@ public class Factory {
 	    	properties.load(is);
 		}
     	
+		
     	// build pipeline
     	StanfordCoreNLP pipeline = new StanfordCoreNLP(properties);
 		return pipeline;
 		
+		
 	}
 
-
-	public static AnnotationWrapper getAnnotationWrapperInstance(String language) throws IOException
-    {
-		switch(language)
-		{
-		case "de":
-			return new GermanAnnotationWrapper();
-		case "es":
-			return new SpanishAnnotationWrapper();
-		case "en":
-			return new EnglishAnnotationWrapper();
-		}
-		
-		
-		throw new IOException("language "+language+" not supported");
-    }
+	
 }

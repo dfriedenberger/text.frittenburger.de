@@ -4,83 +4,70 @@ $( document ).ready(function() {
 
 
 
-    var toHtml = function(token,translation)
+    var toHtml = function(token)
     {
         var html = "";
-        for(var i = 0;i < token.length;i++)
+      
+        var entity = undefined;
+        switch(token.namedEntity)
         {
-            var entity = undefined;
-            switch(token[i].namedEntity)
-            {
-                case 'O':
-                case 'NUMBER':
-                    entity = '';
-                    break;
-                case 'PERSON':
-                    entity = '<i class="fa fa-user"></i> ';
-                    break;
-                case 'ORGANIZATION':
-                    entity = '<i class="fa fa-users"></i> ';
-                    break;
-                case 'CITY':
-                    entity = '<i class="fa fa-building"></i> ';
-                    break;
-                case 'LOCATION':
-                    entity = '<i class="fa fa-map-marker"></i> '; 
-                    break;
-                case 'COUNTRY':
-                    entity = '<i class="fa fa-globe"></i> '; 
-                    break;
-                default:
-                    console.log("unknown entity",token[i].namedEntity);
-                    entity = '<i class="fa fa-question"></i> ';
-                    break;
-            }
+            case 'O':
+            case 'NUMBER':
+                entity = '';
+                break;
+            case 'PERSON':
+                entity = '<i class="fa fa-user"></i> ';
+                break;
+            case 'ORGANIZATION':
+                entity = '<i class="fa fa-users"></i> ';
+                break;
+            case 'CITY':
+                entity = '<i class="fa fa-building"></i> ';
+                break;
+            case 'LOCATION':
+                entity = '<i class="fa fa-map-marker"></i> '; 
+                break;
+            case 'COUNTRY':
+                entity = '<i class="fa fa-globe"></i> '; 
+                break;
+            default:
+                console.log("unknown entity",token.namedEntity);
+                entity = '<i class="fa fa-question"></i> ';
+                break;
+        }
 
-            var type = undefined;
-            switch(token[i].partOfSpeech)
-            {
-                //https://universaldependencies.org/u/pos/all.html
-                //label-default, .label-primary, .label-success, .label-info, .label-warning or .label-danger
-                case 'PROPN': //proper noun
-                case 'PRON': //pronoun
-                case 'NOUN': //noun
-                case 'ADJ': //adjective
-                    type = 'success';
-                    break;
-                case 'VERB':
-                case 'AUX':
-                case 'ADV':
-                    type = 'info';
-                    break;
-                case 'ADP': //pre or post position 
-                case 'PUNCT':
-                case 'DET': //determiner
-                case 'SCONJ': //subordinating conjunction
-                case 'CONJ':
-                case 'NUM': //number
-
+        var type = undefined;
+        switch(token.partOfSpeech)
+        {
+            //https://universaldependencies.org/u/pos/all.html
+            //label-default, .label-primary, .label-success, .label-info, .label-warning or .label-danger
+            case 'proper-noun': //proper noun
+            case 'pronoun': //pronoun
+            case 'noun': //noun
+            case 'adjective': //adjective
+                type = 'success';
+                break;
+            case 'verb':
+            case 'auxiliary-verb':
+            case 'adverb':
+                type = 'info';
+                break;
+            case 'adposition': //pre or post position 
+            case 'punctuation':
+            case 'determiner': //determiner
+            case 'subordinating-conjunction': //subordinating conjunction
+            case 'coordinating-conjunction':
+            case 'particle':
+            case 'numeral':
                     type = 'default';
-                    break;
-                default:
-                    console.log("unknown type",token[i].partOfSpeech);
-                    type = 'danger';
-                    break;
-            }
+                break;
+            default:
+                console.log("unknown type",token.partOfSpeech);
+                type = 'danger';
+                break;
+        }
            
-            html += ' <span class="label label-'+type+'">'+entity + token[i].text+'</span>';;
-        }
-
-        var grouptype = token.length == 1?"single":"multi";
-        if(translation)
-        {
-            html = '<span class="group group-link-'+grouptype+'" data-toggle="tooltip" data-placement="top" title="'+translation+'">' + html + '</span>';
-        }
-        else
-        {
-            html = '<span class="group group-nolink-'+grouptype+'">' + html + '</span>';
-        }
-
+        html = ' <span class="label label-'+type+'" data-toggle="tooltip" data-placement="top" title="'+token.namedEntity+'/'+token.partOfSpeech+'">'+entity + token.text+'</span>';
         return html;
     }
 
@@ -104,25 +91,20 @@ $( document ).ready(function() {
                 success : function(response) {
                     console.log(response);
 
-                    var groups = response['groups'];
-                    var translation = response['translation'];
+                $('#result').empty();
 
-                    $('#result').empty();
-
-                    for(var i = 0;i < groups.length;i++)
+                for(var i = 0;i < response.text.sentences.length;i++)
+                {
+                    var sentence = response.text.sentences[i];
+                    for(var x = 0;x < sentence.tokens.length;x++)
                     {
-                        var token = groups[i].tokens;
-                        var trans = translation[i] == null ? undefined : translation[i].candidates[0];
-                        
-                        console.log(token,"==",trans);
-
-
-                        $('#result').append(toHtml(token,trans));
-
-
+                        var token = sentence.tokens[x];
+                        console.log(token);
+                        $('#result').append(toHtml(token));
                     }
+                }
 
-                    $('[data-toggle="tooltip"]').tooltip();
+                $('[data-toggle="tooltip"]').tooltip();
 
                 },
                 error : function(xhr, status, error) {
