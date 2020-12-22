@@ -1,7 +1,7 @@
 # text.frittenburger.de
 WebService for analysing text
 
-![text.frittenburger.de](https://raw.githubusercontent.com/dfriedenberger/text.frittenburger.de/master/webservice.png)
+![text.frittenburger.de](webservice.png)
 
 # Quick Start
 <pre><code>

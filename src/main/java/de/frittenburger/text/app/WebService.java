@@ -28,7 +28,7 @@ public class WebService {
 		
 
 		 
-		 post("/translate",(request, response) -> {
+		 post("/parse",(request, response) -> {
 			 
 
 			    String bearerToken = null;
