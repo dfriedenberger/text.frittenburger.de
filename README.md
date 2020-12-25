@@ -5,7 +5,7 @@ WebService for analysing text
 
 # Quick Start
 <pre><code>
-export MAVEN_OPTS="-Xmx4g"
+export MAVEN_OPTS="-Xmx6g"
 mvn exec:java -Dexec.mainClass="de.frittenburger.text.app.WebService"
 </code></pre>
 # Contact
