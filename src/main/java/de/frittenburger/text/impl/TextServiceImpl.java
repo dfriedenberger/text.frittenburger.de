@@ -26,7 +26,6 @@ public class TextServiceImpl implements TextService {
 
 	
 	
-	@SuppressWarnings("unused")
 	private static final Logger logger = LogManager.getLogger(TextServiceImpl.class);
 	
 

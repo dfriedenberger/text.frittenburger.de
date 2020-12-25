@@ -6,23 +6,32 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import de.frittenburger.text.impl.Factory;
 import de.frittenburger.text.impl.TextServiceImpl;
 import de.frittenburger.text.interfaces.TextService;
 import de.frittenburger.text.model.Text;
 
 public class WebService {
 
+	
+	private static final Logger logger = LogManager.getLogger(Factory.class);
 
 	public static void main(String[] args) throws IOException {
 		
 		 final Map<String,TextService> textServices = new HashMap<>();
 		//init
     	textServices.put("english",new TextServiceImpl("english"));
+    	logger.info("english pipeline loaded");
     	textServices.put("german",new TextServiceImpl("german"));
+    	logger.info("spanish pipeline loaded");
     	textServices.put("spanish",new TextServiceImpl("spanish"));
-	
+    	logger.info("spanish pipeline loaded");
+
 		staticFileLocation("/htdocs");
          
 		
@@ -68,7 +77,7 @@ public class WebService {
 		 });
 		 
 		 
-		 System.out.println("ready, start on "+port());
+		 logger.info("ready, start on "+port());
 	}
 
 
