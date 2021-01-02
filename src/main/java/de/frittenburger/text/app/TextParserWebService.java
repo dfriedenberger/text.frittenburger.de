@@ -19,7 +19,7 @@ import de.frittenburger.text.model.Text;
 public class TextParserWebService {
 
 	
-	private static final Logger logger = LogManager.getLogger(Factory.class);
+	private static final Logger logger = LogManager.getLogger(TextParserWebService.class);
 
 	public static void main(String[] args) throws IOException {
 		
@@ -60,7 +60,7 @@ public class TextParserWebService {
 			    String language = request.queryParams("language");
 
 			    
-			    if(bearerToken == null || !textServices.containsKey(language))
+			    if(!textServices.containsKey(language))
 				{
 			        halt(404, "Language not supported");
 				}
