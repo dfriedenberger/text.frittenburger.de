@@ -16,7 +16,7 @@ import de.frittenburger.text.impl.TextServiceImpl;
 import de.frittenburger.text.interfaces.TextService;
 import de.frittenburger.text.model.Text;
 
-public class WebService {
+public class TextParserWebService {
 
 	
 	private static final Logger logger = LogManager.getLogger(Factory.class);

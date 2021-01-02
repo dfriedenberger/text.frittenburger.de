@@ -44,7 +44,8 @@ public class TextServiceImplTest {
 		Sentence sentence = sentences.get(0);
 		ObjectMapper mapper = new ObjectMapper();
 		
-		
+		assertEquals(textstr,sentence.getText());
+
 		String ner2 = sentence.getTokens().stream().map(t -> t.getNamedEntity()).collect(Collectors.joining(","));
 		String pos2 = sentence.getTokens().stream().map(t -> t.getPartOfSpeech()).collect(Collectors.joining(","));
 

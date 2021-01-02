@@ -30,6 +30,9 @@ $( document ).ready(function() {
             case 'COUNTRY':
                 entity = '<i class="fa fa-globe"></i> '; 
                 break;
+            case 'DATE':
+                entity = '<i class="fa fa-calendar"></i> '; 
+                break;
             default:
                 console.log("unknown entity",token.namedEntity);
                 entity = '<i class="fa fa-question"></i> ';

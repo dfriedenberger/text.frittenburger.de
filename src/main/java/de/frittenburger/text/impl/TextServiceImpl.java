@@ -4,9 +4,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import de.frittenburger.text.interfaces.TextService;
 import de.frittenburger.text.interfaces.WordFrequencyService;
 import de.frittenburger.text.model.Sentence;
@@ -23,11 +20,6 @@ import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.util.CoreMap;
 
 public class TextServiceImpl implements TextService {
-
-	
-	
-	private static final Logger logger = LogManager.getLogger(TextServiceImpl.class);
-	
 
 	private final StanfordCoreNLP pipeline;
 	private final WordFrequencyService frequencyService;
@@ -62,6 +54,8 @@ public class TextServiceImpl implements TextService {
 			Sentence sentence = new Sentence();
 			text.addSentencesItem(sentence);
 
+			sentence.setText(sent.get(TextAnnotation.class));
+
 			for (CoreLabel tok : sent.get(TokensAnnotation.class)) {
 
 				Token token = new Token();
@@ -78,29 +72,34 @@ public class TextServiceImpl implements TextService {
 				
 			
 				// this is the NER label of the token
-				String ne = tok.get(NamedEntityTagAnnotation.class);
-				token.setNamedEntity(ne);
+				String namedEntity = tok.get(NamedEntityTagAnnotation.class);
+				token.setNamedEntity(namedEntity);
 
 				token.setLevel(-1);
-				if(isVocabulary(pos,ne))
+				if(isVocabulary(partofSpeech,namedEntity))
 				{
 					int level = frequencyService.level(word);
 					token.setLevel(level);
 				}
 			   
 			}
-			
+
 		}
 		
 		return text;
 	}
 
-	private boolean isVocabulary(String pos, String ne) {
+	private boolean isVocabulary(String partofSpeech, String namedEntity) {
 
-		if(!ne.equals("O")) return false;
 		
-		if(pos.equals("punctuation")) return false;
+		if(partofSpeech.equals("adverb")) return true;
+		if(partofSpeech.equals("adjective")) return true;
+		if(partofSpeech.equals("noun")) return true;
+		if(partofSpeech.equals("verb")) return true;
 		
+		if(partofSpeech.equals("punctuation")) return false;
+
+		if(!namedEntity.equals("O")) return false;
 		return true;
 	}
 
