@@ -11,7 +11,7 @@
 
     <!-- Versions-->
     <jackson.version>2.12.0</jackson.version>
-    <apache-logging.version>2.16.0</apache-logging.version>
+    <apache-logging.version>2.17.0</apache-logging.version>
 	<spark.version>2.7.2</spark.version>
    	<servlet.version>3.1.0</servlet.version>
     <stanford.version>4.2.0</stanford.version>
