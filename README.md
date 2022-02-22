@@ -4,10 +4,18 @@ WebService for analysing text
 ![text.frittenburger.de](webservice.png)
 
 # Quick Start
-<pre><code>
-export MAVEN_OPTS="-Xmx6g"
-mvn exec:java -Dexec.mainClass="de.frittenburger.text.app.WebService"
-</code></pre>
+```
+mvn package
+java -jar target/NLP-Test-0.0.1-SNAPSHOT-jar-with-dependencies.jar 
+```
+
+
+
+## Or use docker
+```
+docker run -it --rm -p 80:4567 frittenburger/text
+```
+
 # Contact
 Dirk Friedenberger, Waldaschaff, Germany
 
