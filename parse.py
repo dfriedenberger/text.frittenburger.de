@@ -9,7 +9,7 @@ parser.add_argument('--text', help='text')
 
 
 
-def translate(language,text):
+def parse_text(language,text):
     url = 'https://text.frittenburger.de/parse'
     payload = 'language=' + language+'&text=' + urllib.parse.quote(text)
     print(payload)
@@ -28,4 +28,4 @@ def translate(language,text):
 
 args  = parser.parse_args()
 
-translate(args.language,args.text)
+parse_text(args.language,args.text)

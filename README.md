@@ -33,9 +33,8 @@ https://text.frittenburger.de/parse
 
 ## Use python
 ```
-python translate.py --language spanish --text "¿Dónde está el coche?"
+python parse.py --language spanish --text "¿Dónde está el coche?"
 ```
-
 
 # Contact
 Dirk Friedenberger, Waldaschaff, Germany
